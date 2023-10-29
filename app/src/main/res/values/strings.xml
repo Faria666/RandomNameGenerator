@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">RandomNameGenerator</string>
+    <string name="page_title">Random Baby Name Generator</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="name">Name:</string>
+</resources>
