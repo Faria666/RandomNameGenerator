@@ -1,6 +1,7 @@
 package com.example.randomnamegenerator.generator
 
 
+import android.util.Log
 import com.example.randomnamegenerator.generator.models.Baby
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
@@ -17,7 +18,7 @@ class RepositoryGenerator: RepositoryGeneratorInterface {
 
     override suspend fun fetchJson(): Result<List<Baby>> {
 
-        val url = "https://mocki.io/v1/a917794c-33eb-4b8f-b598-f803d7126f2a"
+        val url = "https://mocki.io/v1/7ef85e29-63e8-432c-8704-abd6d8397c3b"
         val request = Request.Builder().url(url).build()
 
         val client = OkHttpClient()
@@ -38,6 +39,7 @@ class RepositoryGenerator: RepositoryGeneratorInterface {
         val body = response.body?.string()
 
         val posts = Json.decodeFromString<List<Baby>>(body ?: "")
+        Log.d("RepositoryGenerator", "Posts: $posts")
 
         return Result.success(posts)
 
